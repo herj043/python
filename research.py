@@ -1,3 +1,6 @@
+#exiting program in middle of code - in order to shut down loops (Undiscovered)
+
+
 from tkinter import *
 leave = input("do you wish to shut the program down? (yes/no): ")
 
