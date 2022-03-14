@@ -6,22 +6,13 @@ import test as t
 t.cry()
 leave = input("do you wish to to deal with looping windows?  ")
 
-def loop_win():
-    for i in range(4):
-        print("window loop (" + str(i+1) + "/4)")
-        myLabel = Label(Tk(), text="Hello World")
-
-        myLabel.pack()
-        
-        Tk().mainloop()
-    
 
 if "end" in leave.lower():
     print("Exiting program...")
     exit()
 elif "y" in leave.lower():
     print("looping windows...")
-    loop_win()
+    t.loop_win()
 
 #Spams windows after you deleted the window
 
