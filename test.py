@@ -1,5 +1,8 @@
 from tkinter import *
+from research import *
 
+k = k
+print(k)
 def cry():
     print("*crying*")
 
@@ -12,3 +15,17 @@ def loop_win():
         
         Tk().mainloop()
     
+print("Program running")
+
+if k == 1:
+    leave = input("do you wish to to deal with looping windows?  ")
+
+
+    if "end" in leave.lower():
+        print("Exiting program...")
+        exit()
+    elif "y" in leave.lower():
+        print("looping windows...")
+        loop_win()
+
+print("Program end")
