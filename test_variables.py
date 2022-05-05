@@ -1,5 +1,5 @@
-from test_numbers import *
-a = 10
-b = 1.5
+from tkinter import *
 
-
+win = Tk()
+my_label = Label(win, text="Hello!")
+my_label.pack()

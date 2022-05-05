@@ -1,13 +1,29 @@
-# Program cannot run on its own. Runned through test_variables.py
-from test_variables import *
+from tkinter import *
 
-if a + b == b:
-    print("Your answer is boring...")
+win = Tk()
 
-else:
-    print("Your Number is: " + str(a + b))
+c = Entry(width= 80)
+c.insert(0, "Insert word")
 
+def click():
+    hello = Label(win, text=c.get())
+    hello.pack()
+    c.delete(0, END)
 
-print("Hello World, I am print statement 1")
-print("Hello World, I am print statement 2")
-print("Hello World, I am print statement 3")
+def character_insert(character):
+    current = c.get()
+    c.delete(0, END)
+    c.insert(0, str(current) + str(character))
+
+def clear():
+    c.delete(0, END)
+
+a = Button(win, text="Hello", padx=19, pady=39, command=click)
+b = Button(win, text="Clear", command=clear)
+d = Button(win, text="_", command=lambda:character_insert("________________________________"))
+
+b.pack()
+c.pack()
+a.pack()
+d.pack()
+win.mainloop()

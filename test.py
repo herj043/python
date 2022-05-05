@@ -1,8 +1,7 @@
 from tkinter import *
 from research import *
 
-k = k
-print(k)
+
 def cry():
     print("*crying*")
 

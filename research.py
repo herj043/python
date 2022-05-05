@@ -1,6 +1,6 @@
 #exiting program in middle of code - in order to shut down loops (Undiscovered)
 from tkinter import *
-import test
+from test import *
 
 k = 1
 #Spams windows after you deleted the window
