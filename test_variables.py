@@ -1,5 +1,6 @@
-from tkinter import *
+class_types = [{}, [], (), '""', "''", 1, 0.1, True]
 
-win = Tk()
-my_label = Label(win, text="Hello!")
-my_label.pack()
+for i in range(len(class_types)):
+    print(class_types[i])
+    print(type(class_types[i]))
+

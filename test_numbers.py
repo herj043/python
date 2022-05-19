@@ -27,3 +27,8 @@ c.pack()
 a.pack()
 d.pack()
 win.mainloop()
+
+
+
+a = {}
+print(type(a))
