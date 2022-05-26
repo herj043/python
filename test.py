@@ -10,13 +10,14 @@ class Calendar_GUI:
         self.window = tk.Frame(window)
         self.window.grid()
 
-        self.date = tk.Button(window, text=word, padx=50, pady=50)
-        self.date.grid(row=grid_row, column=grid_column)
+        self.date = tk.Button(window, text=word, padx=20, pady=15)
+        self.date.grid(row=grid_row, column=grid_column, sticky="nesw")
+        
 
 # Calendar Dates
 yy = 2022
-mm = 6
-dd = 30
+mm = 7
+dd = 1
 days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Satuday", "Sunday"]
 day = cal.weekday(yy, mm, dd)
 
@@ -26,18 +27,16 @@ number = {1: "First", 2: "Second", 3: "Third", 4: "Fourth", 5: "Fifth", 6: "Sixt
         19: "Nineteenth", 20: "Twentieth", 21: "Twenty-First", 22: "Twenty-Second", 23: "Twenty-Third", 24: "Twenty-Fourth", 25: "Twenty-Fifth", \
         26: "Twenty-Sixth", 27: "Twenty-Seventh", 28: "Twenty-Eighth", 29:  "Twenty-Ninth", 30: "Thirdieth", 31: "Thirdy-First"}
 
-number_word = ["First", "Second", "Third", "Fourth", "Fifth", "Sixth",  "Seventh", "Eighth", "Ninth", "Tenth", \
-        "Elenventh", "Twelth", "Thirteenth", "Fourteenth", "Fifteenth", "Sixteenth", "Seventeenth", "Eighteenth", \
-        "Nineteenth", "Twentieth", "Twenty-First", "Twenty-Second", "Twenty-Third", "Twenty-Fourth", "Twenty-Fifth", \
-        "Twenty-Sixth", "Twenty-Seventh", "Twenty-Eighth", "Twenty-Ninth", "Thirdieth", "Thirdy-First"]
-var = ["a", "b", "c"]
 
-
+date_column = day
+date_row = 0
 for i, item in enumerate(number):
-    if i <
-        row = 1 
+    item = Calendar_GUI(root, item, date_row, date_column)
+    date_column += 1
+    if  date_column >= 7:
+        date_row += 1 
+        date_column += -7
     
-    item = Calendar_GUI(root, item, i)
 
 
 
