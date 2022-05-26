@@ -9,11 +9,12 @@ run_gui = True
 
 # Calendar Dates
 yy = 2022
-mm = 2
+mm = 5
 first_day = 1
 
 week_day_names = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Satuday", "Sunday"]
-month_names = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+month_names = [" ", "January", "February", "March", "April", "May", "June", "July", \
+            "August", "September", "October", "November", "December"]
 day = cal.weekday(yy, mm, first_day)
 
 
