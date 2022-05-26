@@ -86,6 +86,7 @@ def create_calendar_gui(parent):
     date_column = day
     last_day_month = get_month_last_date()
     date_row = 2
+
     # Calendar Month
     month = Calendar_Name_GUI(parent, month_names[mm] + " " + str(yy), 0, 0)
     month.font_size = 20
@@ -99,8 +100,6 @@ def create_calendar_gui(parent):
     next_month = Calendar_Month_Switch(parent, "Next", ">", 0, 6)
     next_month.update_gui()
     
-
-
 
     # Calendar Weekday
     for i,item in enumerate(week_day_names):
@@ -149,27 +148,30 @@ if run_gui == True:
 
 
 # display the calendar
-user_input = ""
-user_month_base = 0
-user_year_base = 0
-
-while user_input != "":
-    if user_input == "-":
-        user_month_base += -1
-
-    elif user_input == "+": 
-        user_month_base += 1
-    
-    if (mm + user_month_base) == 0:
-        user_month_base += 12
-        user_year_base += -1
-
-    if (mm + user_month_base) == 13:
-        user_month_base += -12
-        user_year_base += 1
-
-    print(cal.month(yy + user_year_base, mm + user_month_base))
+if False:
     user_input = input("'-': to move back a month, '+': to move forward a month.  Enter: ")
+    user_month_base = 0
+    user_year_base = 0
 
-print(cal.month(yy + user_year_base, mm + user_month_base))
+
+    while user_input != "":
+        if user_input == "-":
+            user_month_base += -1
+
+        elif user_input == "+": 
+            user_month_base += 1
+        
+        if (mm + user_month_base) == 0:
+            user_month_base += 12
+            user_year_base += -1
+
+        if (mm + user_month_base) == 13:
+            user_month_base += -12
+            user_year_base += 1
+
+        print(cal.month(yy + user_year_base, mm + user_month_base))
+        user_input = input("'-': to move back a month, '+': to move forward a month.  Enter: ")
+
+
+print(cal.month(yy, mm))
 print(str(week_day_names[day]) + ": " + str(first_day))
