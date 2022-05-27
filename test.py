@@ -19,8 +19,7 @@ class Calendar_Month_Switch:
         self.title = title
 
     def update_gui(self):
-        self.window = tk.Frame(self.parent)
-        self.window.grid()
+
 
         self.date = tk.Button(self.parent, text=self.word, padx=10, pady=5, border=1, \
                              command=lambda: month_change(self.value, self.parent))
@@ -43,9 +42,6 @@ class Calendar_Date_GUI:
         self.title = title
 
     def update_gui(self):
-        self.window = tk.Frame(self.parent)
-        self.window.grid()
-
         self.date = tk.Button(self.parent, text=self.word, padx=20, pady=15)
         self.date.grid(row=self.grid_row, column=self.grid_column, sticky="nesw")
 
@@ -69,8 +65,6 @@ class Calendar_Name_GUI:
         self.column_span = 1
 
     def update_gui(self):
-        self.window = tk.Frame(self.parent)
-        self.window.grid()
 
         self.date = tk.Label(self.parent, text=self.word, font=("Arial", self.font_size))
         self.date.grid(row=self.grid_row, column=self.grid_column, sticky="nesw", columnspan=self.column_span)
@@ -107,7 +101,7 @@ def month_change(value, parent):
         user_month_pick += -12
         user_year_date += 1
         print("Year: " + str(user_year_date + yy))
-        
+
     day = cal.weekday(user_year_date + yy, mm + user_month_pick, 1)
 
     print(user_month_pick)
@@ -148,7 +142,7 @@ def create_calendar_gui(parent, month, year, first_day):
 
         date_column += 1
         if  date_column >= 7:
-            date_row += 1 
+            date_row += 1
             date_column += -7
     
 
