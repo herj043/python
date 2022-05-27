@@ -6,6 +6,7 @@ import calendar as cal
 #########################################################################################################
 #########################################################################################################
 
+
 class Calendar_Month_Switch:
 
     def __init__(self, parent, title = "None",  word = "None", grid_row = 0, grid_column = 0, value = 0):
@@ -20,11 +21,9 @@ class Calendar_Month_Switch:
 
     def update_gui(self):
 
-
         self.date = tk.Button(self.parent, text=self.word, padx=10, pady=5, border=1, \
                              command=lambda: month_change(self.value, self.parent))
         self.date.grid(row=self.grid_row, column=self.grid_column,)
-
 
     def __repr__(self):
         return str(self.title)
@@ -90,6 +89,7 @@ def month_change(value, parent):
     global user_month_pick
     global user_year_date
 
+    clean_gui()
     user_month_pick += value
 
     if (mm + user_month_pick) == 0:
@@ -107,10 +107,17 @@ def month_change(value, parent):
     print(user_month_pick)
     create_calendar_gui(parent, mm + user_month_pick, yy + user_year_date, day)
 
+def clean_gui():
+    for i in range(len(number_word)):
+        try:
+            number_word[i].destroy_gui()
+        except:
+            continue
 
 
 # Creates Calendar GUI 
 def create_calendar_gui(parent, month, year, first_day):
+    global number_word
 
     date_column = first_day
     last_day_month = get_month_last_date(month, year)
