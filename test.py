@@ -42,11 +42,11 @@ class Calendar_Date_GUI:
         self.title = title
 
     def update_gui(self):
-        self.date = tk.Button(self.parent, text=self.word, padx=20, pady=15)
+        self.date = tk.Button(self.parent, text=self.word, padx=20, pady=15, command= self.destroy_gui)
         self.date.grid(row=self.grid_row, column=self.grid_column, sticky="nesw")
 
-    def destroy_gui():
-        pass
+    def destroy_gui(self):
+        self.date.destroy()
 
     def __repr__(self):
         return str(self.title)
@@ -111,7 +111,6 @@ def month_change(value, parent):
 
 # Creates Calendar GUI 
 def create_calendar_gui(parent, month, year, first_day):
-    global number_word
 
     date_column = first_day
     last_day_month = get_month_last_date(month, year)
@@ -165,10 +164,10 @@ yy = 2022
 mm = 5
 
 # Day Names
-week_day_names = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Satuday", "Sunday"]
+week_day_names = [ "Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Satuday"]
 month_names = [" ", "January", "February", "March", "April", "May", "June", "July", \
             "August", "September", "October", "November", "December"]
-day = cal.weekday(yy, mm, 1)
+day = cal.weekday(yy, mm, 2)
 
 
 
