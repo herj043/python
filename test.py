@@ -85,6 +85,7 @@ def get_month_last_date(month, year):
         except:
             last_day += -1 
 
+# Changes the month variables and updates calendar GUI
 def month_change(value, parent):
     global user_month_pick
     global user_year_date
@@ -95,18 +96,16 @@ def month_change(value, parent):
     if (mm + user_month_pick) == 0:
         user_month_pick += 12
         user_year_date += -1
-        print("Year: " + str(user_year_date + yy))
 
     if (mm + user_month_pick) == 13:
         user_month_pick += -12
         user_year_date += 1
-        print("Year: " + str(user_year_date + yy))
 
     day = cal.weekday(user_year_date + yy, mm + user_month_pick, 1)
 
-    print(user_month_pick)
     create_calendar_gui(parent, mm + user_month_pick, yy + user_year_date, day)
 
+# wipes out previous GUI dates to conserve performance
 def clean_gui():
     for i in range(len(number_word)):
         try:
