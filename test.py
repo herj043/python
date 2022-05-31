@@ -6,7 +6,7 @@ import calendar as cal
 #########################################################################################################
 #########################################################################################################
 
-
+# Button commands to switch months
 class Calendar_Month_Switch:
 
     def __init__(self, parent, title = "None",  word = "None", grid_row = 0, grid_column = 0, value = 0):
@@ -28,7 +28,7 @@ class Calendar_Month_Switch:
     def __repr__(self):
         return str(self.title)
 
-# Date calendar
+# Days of the calender   EX: 1, 2, 3, 4
 class Calendar_Date_GUI:
     
     def __init__(self, parent, title = "None",  word = "None", grid_row = 0, grid_column = 0):
@@ -50,7 +50,7 @@ class Calendar_Date_GUI:
     def __repr__(self):
         return str(self.title)
 
-
+# Names of the days   EX: June 2022, Thursday, Friday.
 class Calendar_Name_GUI:
     
     def __init__(self, parent, word = "None", grid_row = 0, grid_column = 0):
